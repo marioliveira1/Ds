@@ -1,30 +1,20 @@
-import tkinter as tk
-from TelaInicial import TelaInicial
-from TelaCadastro import TelaCadastro
+from tkinter import *
 
 
 class App:
     def __init__(self, root):
-        self.root = root
-        self.root.title("Sistema de Cadastro")
-        self.root.geometry("300x300")
-        self.tela_inicial = None
-        self.tela_cadastro = None
-        self.mostrar_tela_inicial()
+        self.frame1 = Frame(root)
+        self.frame1.pack()
+        Label(self,framel,text="Conversão de Centimetro para Polegada",
+        font=("Verdana", "14", "bold"), height=3).pack()
 
-    def mostrar_tela_inicial(self):
-        self.limpar_tela()
-        self.tela_inicial = TelaInicial(self.root, self.mostrar_tela_cadastro)
-
-    def mostrar_tela_cadastro(self):
-        self.limpar_tela()
-        self.tela_cadastro = TelaCadastro(self.root, self.mostrar_tela_inicial)
-
-    def limpar_tela(self):
-        for widget in self.root.winfo_children():
-         widget.destroy()
+      
         
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = App(root)
-    root.mainloop()
+    Label(self,framel,text="Centimetro(s):").pack(side=LEFT)
+    self.centimetro=Entry(self.framel)
+    self.centimetro.focus_force()
+    self.centimetro.pack(side=LEFT)
+    Button(self,frame1,text="Converter",command=self.converter)
+
+
+    Label(self.frame1,text="Polegada(s):").pack(side=LEFT)
